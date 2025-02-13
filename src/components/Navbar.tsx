@@ -1,7 +1,8 @@
 "use client";
 import { Github, Linkedin, Menu, Moon, Sun, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import Logo from "./Logo";
+import { motion } from "framer-motion";
+import Logo from "./Home/Logo";
 
 function Navbar() {
   const Bars = ["Home", "Contact", "About", "Experience"];
@@ -29,78 +30,128 @@ function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <div className="w-full flex justify-between items-center p-4 fixed top-0 text-gray-900 bg-gray-300/50 dark:text-white dark:bg-gray-900/50 bg-opacity-5 h-16">
-        <Logo/>
+      <motion.div
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="w-full flex justify-between items-center p-4 fixed top-0 text-gray-900 bg-gray-300/50 dark:text-white dark:bg-gray-900/50 h-16"
+      >
+        {/* Logo Animation */}
+        <motion.div
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <Logo />
+        </motion.div>
+
         {/* Desktop Menu */}
-        <div className="hidden sm:flex flex-row gap-6">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.15 } },
+          }}
+          className="hidden sm:flex flex-row gap-4"
+        >
           {Bars.map((bar, index) => (
-            <div
+            <motion.div
               key={index}
-              className="hover:scale-110 cursor-pointer hover:underline"
+              variants={{
+                hidden: { y: -30, opacity: 0 },
+                visible: { y: 0, opacity: 1 },
+              }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="hover:scale-105 cursor-pointer hover:border-2 px-2 rounded-full duration-300 py-1 border-gray-900 dark:border-white transition"
             >
               {bar}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Icons + Theme Toggle */}
-        <div className="hidden sm:flex flex-row gap-2">
-          <div className="hover:scale-110 cursor-pointer p-2 hover:underline">
+        <motion.div
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="hidden sm:flex flex-row gap-2"
+        >
+          <motion.div whileHover={{ scale: 1.1 }} className="cursor-pointer p-2">
             <Linkedin size={20} />
-          </div>
-          <div className="hover:scale-110 cursor-pointer p-2 hover:underline">
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.1 }} className="cursor-pointer p-2">
             <Github size={20} />
-          </div>
-          <button
+          </motion.div>
+          <motion.button
             onClick={toggleTheme}
-            className="ml-2 p-2 rounded-lg border bg-gray-200 border-gray-950 dark:bg-gray-900 dark:border-white text-black dark:text-white"
+            whileTap={{ scale: 0.9 }}
+            className="ml-2 p-2 rounded-lg border bg-gray-200 border-gray-950 dark:bg-gray-900 dark:border-white"
           >
             {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
 
         {/* Mobile Sidebar Button */}
-        <button
-          className="sm:hidden block"
-          onClick={() => setIsSidebarOpen((prev) => !prev)}
-        >
+        <button className="sm:hidden block" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
           {isSidebarOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
-      </div>
+      </motion.div>
 
       {/* Sidebar for Mobile */}
-      <div
-        className={`fixed top-16 right-0 h-full w-64 bg-gray-300/90 dark:bg-gray-900/90 dark:text-white z-50 transform ${
-          isSidebarOpen ? "block" : "hidden"
-        } transition-transform duration-300 ease-in-out sm:hidden justify-center items-center `}
+      <motion.div
+        initial={{ x: "100%" }}
+        animate={{ x: isSidebarOpen ? 0 : "100%" }}
+        transition={{ type: "spring", stiffness: 120, damping: 15 }}
+        className="fixed top-16 right-0 h-full w-64 bg-gray-300/90 dark:bg-gray-900/90 dark:text-white z-50 shadow-lg sm:hidden"
       >
-        <div className="flex flex-col gap-6 p-6 justify-center items-center w-full">
+        <motion.div
+          initial="hidden"
+          animate={isSidebarOpen ? "visible" : "hidden"}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.15 } },
+          }}
+          className="flex flex-col gap-6 p-6 justify-center items-center w-full"
+        >
           {Bars.map((bar, index) => (
-            <div
+            <motion.div
               key={index}
-              className="hover:scale-110 cursor-pointer hover:underline text-lg"
+              variants={{
+                hidden: { opacity: 0, x: 50 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              className="hover:scale-110 cursor-pointer hover:border-2 border transition duration-300 text-lg"
               onClick={() => setIsSidebarOpen(false)}
             >
               {bar}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+
         {/* Icons + Theme Toggle */}
-        <div className="flex justify-center items-center gap-2">
-          <div className="hover:scale-110 cursor-pointer p-2 hover:underline">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isSidebarOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="flex justify-center items-center gap-2"
+        >
+          <motion.div whileHover={{ scale: 1.1 }} className="cursor-pointer p-2">
             <Linkedin size={20} />
-          </div>
-          <div className="hover:scale-110 cursor-pointer p-2 hover:underline">
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.1 }} className="cursor-pointer p-2">
             <Github size={20} />
-          </div>
-          <button
+          </motion.div>
+          <motion.button
             onClick={toggleTheme}
+            whileTap={{ scale: 0.9 }}
             className="ml-2 p-2 rounded-lg border bg-gray-200 dark:bg-gray-900 text-black dark:text-white"
           >
             {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-        </div>
-      </div>
+          </motion.button>
+        </motion.div>
+      </motion.div>
     </>
   );
 }

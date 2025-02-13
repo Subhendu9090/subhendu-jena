@@ -1,5 +1,6 @@
 import DecorativeBackground from "@/components/DecorativeBackground";
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "@/components/Home/HeroSection";
+import WhoAmI from "@/components/Home/WhoAmI";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       {/* Background Decorations */}
       <DecorativeBackground />
       <HeroSection />
+      <WhoAmI/>
     </div>
   );
 }
