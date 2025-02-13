@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="relative bg-transparent dark:bg-black bg-white text-black dark:text-white z-10 py-8">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-2xl font-semibold">Let's Connect</h2>
+        <h2 className="text-2xl font-semibold">Let&apos;s  Connect</h2>
         <div className="flex justify-center space-x-6 mt-4">
           <a href="*" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
             <Github size={24} />
