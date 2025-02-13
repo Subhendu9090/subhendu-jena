@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Code, Database, Layout, Server } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const skills = [
   {
@@ -45,14 +46,17 @@ const WhoAmI: React.FC = () => {
     <div className="w-full dark:bg-blue-100/10 bg-gray-400/40 z-10 relative py-12 px-4 sm:px-6 lg:px-8  duration-200">
       <div className="max-w-7xl mx-auto">
         <div className="flex md:flex-row justify-around flex-col gap-8 items-center">
+          
           {/* Image Section */}
           <div className="flex justify-center w-full md:w-1/2 ">
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 dark:border-blue-400">
-                <img
-                  src="/api/placeholder/400/400"
+                <Image
+                  src="/immag"
                   alt="Subhendu Jena"
-                  className="w-full h-full object-cover"
+                  className="object-cover"
+                  width={250}
+                  height={250}
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-blue-500 dark:bg-blue-400 text-white p-4 rounded-full shadow-lg">
