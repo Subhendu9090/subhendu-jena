@@ -122,7 +122,7 @@ function Navbar() {
                 visible: { opacity: 1, x: 0 },
               }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="hover:scale-110 cursor-pointer hover:border-2 border transition duration-300 text-lg"
+              className="hover:scale-110 cursor-pointer hover:border-2 rounded-xl px-4 border-black dark:border-white py-2 transition duration-300 text-lg"
               onClick={() => setIsSidebarOpen(false)}
             >
               {bar}
