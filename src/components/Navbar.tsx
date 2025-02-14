@@ -3,9 +3,15 @@ import { Github, Linkedin, Menu, Moon, Sun, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Logo from "./Home/Logo";
+import { useRouter } from "next/navigation";
 
 function Navbar() {
-  const Bars = ["Home", "Contact", "About", "Experience"];
+  const Bars = [
+    { name: "Home", navigateLink:"/" },
+    { name: "Contact",navigateLink:"/contact" },
+    { name: "About",navigateLink:"/about" },
+    { name: "Experience",navigateLink:"/experience" },
+  ];
   const [theme, setTheme] = useState("dark");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -26,7 +32,11 @@ function Navbar() {
     document.documentElement.classList.toggle("dark", newTheme === "dark");
     localStorage.setItem("theme", newTheme);
   };
+  const router = useRouter();
 
+  const handleNavigation = (path:string) => {
+    router.push(path);
+  };
   return (
     <>
       {/* Navbar */}
@@ -34,7 +44,7 @@ function Navbar() {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="w-full flex justify-between items-center p-4 fixed top-0 text-gray-900 bg-gray-300/50 dark:text-white dark:bg-gray-900/50 h-16"
+        className="w-full flex justify-between items-center p-4 fixed top-0 text-gray-900 bg-gray-300/50 dark:text-white dark:bg-gray-900 h-16"
       >
         {/* Logo Animation */}
         <motion.div
@@ -64,8 +74,9 @@ function Navbar() {
               }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="hover:scale-105 cursor-pointer hover:border-2 px-2 rounded-full duration-300 py-1 border-gray-900 dark:border-white transition"
+              onClick={()=>handleNavigation(bar.navigateLink)}
             >
-              {bar}
+              {bar.name}
             </motion.div>
           ))}
         </motion.div>
@@ -77,10 +88,16 @@ function Navbar() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="hidden sm:flex flex-row gap-2"
         >
-          <motion.div whileHover={{ scale: 1.1 }} className="cursor-pointer p-2">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            className="cursor-pointer p-2"
+          >
             <Linkedin size={20} />
           </motion.div>
-          <motion.div whileHover={{ scale: 1.1 }} className="cursor-pointer p-2">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            className="cursor-pointer p-2"
+          >
             <Github size={20} />
           </motion.div>
           <motion.button
@@ -93,7 +110,10 @@ function Navbar() {
         </motion.div>
 
         {/* Mobile Sidebar Button */}
-        <button className="sm:hidden block" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+        <button
+          className="sm:hidden block"
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        >
           {isSidebarOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </motion.div>
@@ -123,9 +143,11 @@ function Navbar() {
               }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
               className="hover:scale-110 cursor-pointer hover:border-2 rounded-xl px-4 border-black dark:border-white py-2 transition duration-300 text-lg"
-              onClick={() => setIsSidebarOpen(false)}
+              onClick={() =>{ 
+                handleNavigation(bar.navigateLink)
+                setIsSidebarOpen(false)}}
             >
-              {bar}
+              {bar.name}
             </motion.div>
           ))}
         </motion.div>
@@ -137,10 +159,16 @@ function Navbar() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex justify-center items-center gap-2"
         >
-          <motion.div whileHover={{ scale: 1.1 }} className="cursor-pointer p-2">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            className="cursor-pointer p-2"
+          >
             <Linkedin size={20} />
           </motion.div>
-          <motion.div whileHover={{ scale: 1.1 }} className="cursor-pointer p-2">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            className="cursor-pointer p-2"
+          >
             <Github size={20} />
           </motion.div>
           <motion.button
