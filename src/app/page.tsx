@@ -1,5 +1,7 @@
 import DecorativeBackground from "@/components/DecorativeBackground";
+import AboutNextProject from "@/components/Home/AboutNextProject";
 import HeroSection from "@/components/Home/HeroSection";
+import Skills from "@/components/Home/Skills";
 import WhoAmI from "@/components/Home/WhoAmI";
 
 export default function Home() {
@@ -9,6 +11,8 @@ export default function Home() {
       <DecorativeBackground />
       <HeroSection />
       <WhoAmI/>
+      <Skills/>
+      <AboutNextProject/>
     </div>
   );
 }

@@ -43,10 +43,9 @@ const WhoAmI: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="w-full dark:bg-blue-100/10 bg-gray-400/40 z-10 relative py-12 px-4 sm:px-6 lg:px-8  duration-200">
+    <div className="w-full dark:bg-blue-100/10 bg-gray-400/40 z-10 relative py-12 px-4 sm:px-6 lg:px-8 duration-200 dark:bg-[url('https://i.pinimg.com/736x/d0/eb/69/d0eb692ca9955b9e0bc67e5fe07610e4.jpg')] bg-cover bg-center">
       <div className="max-w-7xl mx-auto">
         <div className="flex md:flex-row justify-around flex-col gap-8 items-center">
-          
           {/* Image Section */}
           <div className="flex justify-center w-full md:w-1/2 ">
             <div className="relative">
