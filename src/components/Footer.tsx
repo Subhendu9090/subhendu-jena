@@ -2,10 +2,6 @@ import React from "react";
 import {
   Github,
   Linkedin,
-  Twitter,
-  Youtube,
-  FileText,
-  Code,
 } from "lucide-react";
 import DecorativeBackground from "./DecorativeBackground";
 const links = [

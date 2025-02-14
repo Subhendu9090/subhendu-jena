@@ -65,7 +65,7 @@ const ContactSection = () => {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-            Let's Connect
+            Let&apos;s Connect
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
             Have a question or want to work together? I'd love to hear from you.
