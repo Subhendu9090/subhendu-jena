@@ -3,7 +3,7 @@ import {
   Github,
   Linkedin,
 } from "lucide-react";
-import DecorativeBackground from "./DecorativeBackground";
+
 const links = [
   {
     name: "Home",
@@ -83,7 +83,7 @@ const Footer = () => {
             </div>
           </div>
           <div className=" flex flex-col  items-center">
-            <div className=" mb-3 text-md ">LET'S CONNECT</div>
+            <div className=" mb-3 text-md ">LET&apos;S CONNECT</div>
             <div className=" flex flex-col justify-center items-center gap-2 opacity-80 text-sm">
               {letsConnect.map((data, i) => {
                 const Icon = data.icon;
