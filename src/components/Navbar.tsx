@@ -4,13 +4,14 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Logo from "./Home/Logo";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 function Navbar() {
   const Bars = [
-    { name: "Home", navigateLink:"/" },
-    { name: "Contact",navigateLink:"/contact" },
-    { name: "About",navigateLink:"/about" },
-    { name: "Experience",navigateLink:"/experience" },
+    { name: "Home", navigateLink: "/" },
+    { name: "Contact", navigateLink: "/contact" },
+    { name: "About", navigateLink: "/about" },
+    { name: "Experience", navigateLink: "/experience" },
   ];
   const [theme, setTheme] = useState("dark");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -34,7 +35,7 @@ function Navbar() {
   };
   const router = useRouter();
 
-  const handleNavigation = (path:string) => {
+  const handleNavigation = (path: string) => {
     router.push(path);
   };
   return (
@@ -74,7 +75,7 @@ function Navbar() {
               }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="hover:scale-105 cursor-pointer hover:border-2 px-2 rounded-full duration-300 py-1 border-gray-900 dark:border-white transition"
-              onClick={()=>handleNavigation(bar.navigateLink)}
+              onClick={() => handleNavigation(bar.navigateLink)}
             >
               {bar.name}
             </motion.div>
@@ -92,13 +93,25 @@ function Navbar() {
             whileHover={{ scale: 1.1 }}
             className="cursor-pointer p-2"
           >
-            <Linkedin size={20} />
+            <a
+              href="https://www.linkedin.com/in/subhendu-jena-06056925a/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin size={20} />
+            </a>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.1 }}
             className="cursor-pointer p-2"
           >
-            <Github size={20} />
+            <a
+              href="https://github.com/Subhendu9090"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github size={20} />
+            </a>
           </motion.div>
           <motion.button
             onClick={toggleTheme}
@@ -143,9 +156,10 @@ function Navbar() {
               }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
               className="hover:scale-110 cursor-pointer hover:border-2 rounded-xl px-4 border-black dark:border-white py-2 transition duration-300 text-lg"
-              onClick={() =>{ 
-                handleNavigation(bar.navigateLink)
-                setIsSidebarOpen(false)}}
+              onClick={() => {
+                handleNavigation(bar.navigateLink);
+                setIsSidebarOpen(false);
+              }}
             >
               {bar.name}
             </motion.div>
@@ -163,13 +177,25 @@ function Navbar() {
             whileHover={{ scale: 1.1 }}
             className="cursor-pointer p-2"
           >
-            <Linkedin size={20} />
+            <a
+              href="https://www.linkedin.com/in/subhendu-jena-06056925a/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin size={20} />
+            </a>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.1 }}
             className="cursor-pointer p-2"
           >
-            <Github size={20} />
+            <a
+              href="https://github.com/Subhendu9090"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github size={20} />
+            </a>
           </motion.div>
           <motion.button
             onClick={toggleTheme}

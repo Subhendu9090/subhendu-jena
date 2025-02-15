@@ -3,23 +3,24 @@ import {
   Github,
   Linkedin,
 } from "lucide-react";
+import Link from "next/link";
 
 const links = [
   {
     name: "Home",
-    icon: "",
+    icon: "/",
   },
   {
     name: "About",
-    icon: "",
+    icon: "/about",
   },
   {
     name: "Works",
-    icon: "",
+    icon: "/works",
   },
   {
     name: "Contact",
-    icon: "",
+    icon: "/contact",
   },
   {
     name: "Resume",
@@ -28,22 +29,28 @@ const links = [
 ];
 const certificateAndAchievements = [
   {
+    name:"Udemy Full Stack Cert.",
+    link:"/UdemyFullStactCourse.pdf"
+  },
+  {
     name: "IBM Internship Cert.",
-    icon: "",
+    link: "/IBMInternshipCertificate.pdf",
   },
   {
     name: "Full Stack Web Dev Cert.",
-    icon: "",
+    link: "/CodeKartExperienceLetter.pdf",
   },
 ];
 const letsConnect = [
   {
     name: "Github",
     icon: Github,
+    link:"https://github.com/Subhendu9090"
   },
   {
     name: "Linkedin",
     icon: Linkedin,
+    link:"https://www.linkedin.com/in/subhendu-jena-06056925a/"
   },
 ];
 const Footer = () => {
@@ -73,12 +80,11 @@ const Footer = () => {
             </div>
             <div className=" flex flex-col justify-center items-center gap-2 opacity-80 text-sm">
               {certificateAndAchievements.map((data, i) => (
-                <div
-                  className=" hover:underline transition duration-300 hover:scale-105 cursor-pointer"
-                  key={i}
-                >
+                <Link key={i} href={data.link} target="_blank" rel="noopener noreferrer">
+                <div className="hover:underline transition duration-300 hover:scale-105 cursor-pointer">
                   {data.name}
                 </div>
+              </Link>
               ))}
             </div>
           </div>
@@ -88,12 +94,14 @@ const Footer = () => {
               {letsConnect.map((data, i) => {
                 const Icon = data.icon;
                 return (
+                  <Link key={i} href={data.link} target="_blank" rel="noopener noreferrer">
                   <div
                     key={i}
                     className=" hover:underline transition duration-300 hover:scale-110 cursor-pointer"
                   >
                     <Icon />
                   </div>
+                  </Link>
                 );
               })}
             </div>
