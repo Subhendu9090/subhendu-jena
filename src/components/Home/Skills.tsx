@@ -20,7 +20,7 @@ const Skills = () => {
   ];
 
   const SkillCard = ({ name, icon }:{name:string,icon:string}) => (
-    <div className="group relative overflow-hidden rounded-lg bg-white dark:bg-gray-700 p-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+    <div className="group rotate-6 relative overflow-hidden rounded-lg bg-white dark:bg-gray-700 p-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
       <div className="flex items-center space-x-3">
         <span className="text-2xl">{icon}</span>
         <span className="font-medium text-gray-800 dark:text-white">{name}</span>
@@ -30,9 +30,9 @@ const Skills = () => {
   );
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-8 z-10 bg-gray-50 dark:bg-gray-800 rounded-t-xl">
-      <div className="mb-12 text-center">
-        <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+    <div className="w-full max-w-6xl relative mx-auto p-8 z-10 border border-b-0 rounded-t-xl">
+      <div className="mb-12 text-center flex items-center flex-col">
+        <h2 className="text-2xl md:text-4xl font-bold dark:text-black text-white w-fit px-4 py-1 rounded-full dark:bg-white bg-black mb-4">
           My Tech Stack
         </h2>
         <p className="text-gray-600 dark:text-gray-300">
@@ -48,7 +48,7 @@ const Skills = () => {
             Experience In
           </h3>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 xl:grid-cols-4 xxl:grid-cols-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 xl:grid-cols-4 xxl:grid-cols-6">
           {knownLanguages.map((lang) => (
             <SkillCard key={lang.name} {...lang} />
           ))}
