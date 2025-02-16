@@ -22,7 +22,7 @@ function AboutNextProject() {
             className="flex justify-center items-center  px-4 gap-2 py-2 border-2 group cursor-pointer transition duration-300 bg-transparent rounded-full"
             onClick={() => {
               if (isClient) {
-                window.open("mailto:subhebhendu@gmail.com", "_blank");
+                window.open("mailto:subhendujena38@gmail.com", "_blank");
               }
             }}
           >
