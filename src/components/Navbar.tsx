@@ -3,7 +3,7 @@ import { Github, Linkedin, Menu, Moon, Sun, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Logo from "./Home/Logo";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 function Navbar() {

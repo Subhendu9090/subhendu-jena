@@ -1,5 +1,5 @@
 "use client"
-import { Handshake, Linkedin, Mail } from "lucide-react";
+import { Handshake, Mail, MessageCircle } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 function AboutNextProject() {
@@ -29,19 +29,20 @@ function AboutNextProject() {
             <Mail className=" group-hover:animate-bounce" />
             Email Me
           </button>
-          <button className="flex justify-center items-center  px-4 gap-2 py-2 rounded-full group transition duration-300 border-2 cursor-pointer bg-transparent"
-          onClick={() => {
-            if (isClient) {
-              window.open(
-                "https://www.linkedin.com/messaging/compose/?recipient=subhendu-jena-06056925a",
-                "_blank"
-              );
-            }
-          }}
-          >
-            <Linkedin className=" group-hover:animate-bounce" />
-            Linked in
-          </button>
+          <button 
+  className="flex justify-center items-center px-4 gap-2 py-2 rounded-full group transition duration-300 border-2 cursor-pointer bg-transparent"
+  onClick={() => {
+    if (typeof window !== "undefined") {
+      window.open(
+        "https://wa.me/9090003689",
+        "_blank"
+      );
+    }
+  }}
+>
+  <MessageCircle className="group-hover:animate-bounce" />
+  WhatsApp
+</button>
         </div>
       </div>
     </div>

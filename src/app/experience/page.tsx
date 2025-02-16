@@ -1,18 +1,17 @@
 "use client"
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 function ExperienceSection() {
   const experiences = [
     {
       id: 1,
-      company: "Tech Innovations Inc.",
-      role: "Senior Developer",
-      period: "2020 - Present",
-      location: "San Francisco, CA",
-      description: "Leading development of enterprise SaaS solutions for financial technology clients.",
-      logo: "/path/to/company1-logo.png",
+      company: "Qwegle",
+      role: "Software Development Engineer 1",
+      period: "september-2024  - Present",
+      location: "Bhubaneswar, Odisha, India",
+      description: "Developing and maintaining scalable web applications using the MERN stack.",
+      logo: "https://i0.wp.com/www.qwegle.com/wp-content/uploads/2023/03/final-logo2.png?resize=300%2C86&ssl=1",
       projects: [
         {
           id: "p1",
@@ -34,12 +33,12 @@ function ExperienceSection() {
     },
     {
       id: 2,
-      company: "Digital Solutions Co.",
-      role: "Full Stack Developer",
-      period: "2017 - 2020",
-      location: "Austin, TX",
-      description: "Developed web applications and mobile-first solutions for diverse client portfolio.",
-      logo: "/path/to/company2-logo.png",
+      company: "CodeKart",
+      role: "Full Stack Developer Intern",
+      period: "may-2024  -september-2024",
+      location: "Bhubaneswar, Odisha, India",
+      description: "Developing and maintaining scalable web applications using the MERN stack.",
+      logo: "https://cdn.thecodekart.com/assets/images/navbar/codekartlogo.png",
       projects: [
         {
           id: "p3",
@@ -54,15 +53,16 @@ function ExperienceSection() {
   ];
 
   // State to track which experience's projects are visible
-  const [visibleProjects, setVisibleProjects] = useState({});
+  const [visibleProjects, setVisibleProjects] = useState<Record<number, boolean>>({});
 
   // Toggle project visibility for a specific experience
-  const toggleProjects = (id:string) => {
+  const toggleProjects = (id: number) => {
     setVisibleProjects((prev) => ({
       ...prev,
       [id]: !prev[id],
     }));
   };
+  
 
   return (
     <section id="experience" className=" max-w-4xl mx-auto px-4 py-8">
@@ -82,7 +82,7 @@ function ExperienceSection() {
                     alt={`${exp.company} logo`}
                     fill
                     sizes="64px"
-                    className="object-cover"
+                    className="object-contain bg-white px-2"
                   />
                 </div>
                 <div>
@@ -108,7 +108,7 @@ function ExperienceSection() {
             </button>
 
             {/* Projects (only shown if visibleProjects[exp.id] is true) */}
-            {visibleProjects[exp.id] && (
+            {/* {visibleProjects[exp.id] && (
               <div className="pl-0 md:pl-20 mt-6">
                 <h4 className="text-lg font-medium mb-4 dark:text-white">Key Projects</h4>
                 <div className="space-y-8">
@@ -163,7 +163,7 @@ function ExperienceSection() {
                   ))}
                 </div>
               </div>
-            )}
+            )} */}
           </div>
         ))}
       </div>
