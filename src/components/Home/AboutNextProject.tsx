@@ -17,7 +17,7 @@ function AboutNextProject() {
         <div className=" max-w-lg text-6xl font-semibold dark:text-gray-100 text-center text-gray-800">
           Tell me about your next Project
         </div>
-        <div className=" flex justify-center gap-8 w-full mt-4 items-center">
+        <div className=" flex justify-center flex-wrap gap-8 w-full mt-4 items-center">
           <button
             className="flex justify-center items-center  px-4 gap-2 py-2 border-2 group cursor-pointer transition duration-300 bg-transparent rounded-full"
             onClick={() => {

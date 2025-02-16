@@ -20,7 +20,7 @@ const Skills = () => {
   ];
 
   const SkillCard = ({ name, icon }:{name:string,icon:string}) => (
-    <div className="group rotate-6 relative overflow-hidden rounded-lg bg-white dark:bg-gray-700 p-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+    <div className="group hover:rotate-6 relative overflow-hidden rounded-lg bg-white dark:bg-gray-700 p-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
       <div className="flex items-center space-x-3">
         <span className="text-2xl">{icon}</span>
         <span className="font-medium text-gray-800 dark:text-white">{name}</span>
@@ -63,7 +63,7 @@ const Skills = () => {
             Currently Exploring
           </h3>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {learningTech.map((tech) => (
             <SkillCard key={tech.name} {...tech} />
           ))}

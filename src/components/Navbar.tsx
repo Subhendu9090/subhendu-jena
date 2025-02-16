@@ -3,7 +3,8 @@ import { Github, Linkedin, Menu, Moon, Sun, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Logo from "./Home/Logo";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 
 function Navbar() {
   const Bars = [
@@ -32,11 +33,7 @@ function Navbar() {
     document.documentElement.classList.toggle("dark", newTheme === "dark");
     localStorage.setItem("theme", newTheme);
   };
-  const router = useRouter();
-
-  const handleNavigation = (path: string) => {
-    router.push(path);
-  };
+  const pathName = usePathname();
   return (
     <>
       {/* Navbar */}
@@ -73,10 +70,11 @@ function Navbar() {
                 visible: { y: 0, opacity: 1 },
               }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="hover:scale-105 cursor-pointer hover:border-2 px-2 rounded-full duration-300 py-1 border-gray-900 dark:border-white transition"
-              onClick={() => handleNavigation(bar.navigateLink)}
+              className={`hover:scale-105 cursor-pointer hover:border-2 px-2 rounded-full duration-300 py-1 border-gray-900 dark:border-white transition ${
+                bar?.navigateLink==pathName ? "underline" : ""
+              }`}
             >
-              {bar.name}
+              <Link href={bar.navigateLink}>{bar.name}</Link>
             </motion.div>
           ))}
         </motion.div>
@@ -156,11 +154,10 @@ function Navbar() {
               transition={{ duration: 0.3, delay: index * 0.1 }}
               className="hover:scale-110 cursor-pointer hover:border-2 rounded-xl px-4 border-black dark:border-white py-2 transition duration-300 text-lg"
               onClick={() => {
-                handleNavigation(bar.navigateLink);
                 setIsSidebarOpen(false);
               }}
             >
-              {bar.name}
+              <Link href={bar.navigateLink}>{bar.name}</Link>
             </motion.div>
           ))}
         </motion.div>
