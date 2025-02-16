@@ -44,17 +44,43 @@ const ContactSection = () => {
     subject: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [responseMsg, setResponseMsg] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setLoading(true);
+    setResponseMsg("");
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: formData.subject,
+          message: formData.message,
+          from: formData.email,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setResponseMsg("✅ Email sent successfully!");
+      } else {
+        setResponseMsg(`❌ Error: ${data.error || "Something went wrong"}`);
+      }
+    } catch (error) {
+      setResponseMsg("❌ Failed to send email. Please try again.");
+      console.error("Email send error:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -68,7 +94,8 @@ const ContactSection = () => {
             Let&apos;s Connect
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-            Have a question or want to work together? I&apos;d love to hear from you.
+            Have a question or want to work together? I&apos;d love to hear from
+            you.
           </p>
         </div>
 
@@ -208,10 +235,11 @@ const ContactSection = () => {
                   flex items-center justify-center space-x-2
                   transform hover:-translate-y-0.5 transition-all duration-300 group"
               >
-                <span>Send Message</span>
+                {loading ? "Sending..." : "Send Email"}
                 <Send className="w-5 h-5 group-hover:animate-pulse " />
               </button>
             </form>
+            {responseMsg && <p className="mt-2 text-center">{responseMsg}</p>}
           </div>
         </div>
       </div>
