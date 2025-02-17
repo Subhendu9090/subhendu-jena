@@ -11,21 +11,20 @@ import nodemailer from 'nodemailer'
 // });
 // Looking to send emails in production? Check out our Email API/SMTP product!
 const transporter = nodemailer.createTransport({
-  host: "sandbox.smtp.mailtrap.io",
-  port: 2525,
+  service: 'gmail',
   auth: {
-    user: "9f1c5c96dc5380",
-    pass: "b13ea058627316"
+    user: process.env.USER,
+    pass: process.env.APP_PASSWORD
   }
 });
-export async function SendEmail(subject:string,message:string,from:string) {
+export async function SendEmail(subject:string,message:string,from:string,name:string) {
  
   const info = await transporter.sendMail({
     from: from,
-    to: "subhendu@gmail.com",
-    subject: subject,
+    to: "subhendujena38@gmail.com",
+    subject:`<h3>${subject} from ${name}</h3>`,
     text: message,
-    html: `<p>${message}<p/>`,
+    html: `<p>${message}</p>`,
   });
 
   console.log("Message sent: %s", info.messageId);

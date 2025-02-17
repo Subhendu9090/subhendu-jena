@@ -65,6 +65,7 @@ const ContactSection = () => {
           subject: formData.subject,
           message: formData.message,
           from: formData.email,
+          name:formData.name
         }),
       });
 
