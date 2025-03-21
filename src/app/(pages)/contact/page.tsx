@@ -12,6 +12,7 @@ import {
   Send,
 } from "lucide-react";
 import DecorativeBackground from "@/components/DecorativeBackground";
+import Link from "next/link";
 
 const ContactSection = () => {
   const formFields = [
@@ -88,7 +89,7 @@ const ContactSection = () => {
     <div className="w-full min-h-screen bg-[#f8f9fa] dark:bg-gray-900 flex items-center justify-center py-12 px-4">
       {/* Background Decorations */}
       <DecorativeBackground />
-      <div className="max-w-5xl w-full mx-auto">
+      <div className="max-w-5xl relative z-20 w-full mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
@@ -102,7 +103,7 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-5 gap-8 items-start">
           {/* Contact Info Card */}
-          <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl dark:shadow-gray-800/50 border border-gray-100 h-full dark:border-gray-700">
+          <div className="lg:col-span-2 bg-white dark:bg-gray-800/40 rounded-2xl p-6 shadow-xl dark:shadow-gray-800/50 border border-gray-100 h-full dark:border-gray-700">
             <div className="space-y-10">
               {/* Contact Details */}
               <div className="space-y-4 ">
@@ -132,7 +133,7 @@ const ContactSection = () => {
                       Phone
                     </p>
                     <p className="text-gray-900 dark:text-white font-medium">
-                      +91 8917642655
+                      +91 7991066182
                     </p>
                   </div>
                 </div>
@@ -158,29 +159,29 @@ const ContactSection = () => {
                   Connect with me
                 </p>
                 <div className="flex space-x-4">
-                  <a
-                    href="https://github.com/Subhendu-Jena"
+                  <Link
+                    href="https://github.com/Subhendu9090"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center group hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300"
                   >
                     <Github className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="https://linkedin.com/in/subhendu-jena"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center group hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300"
                   >
                     <Linkedin className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-3 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl dark:shadow-gray-800/50 border border-gray-100 dark:border-gray-700">
+          <div className="lg:col-span-3 bg-white dark:bg-gray-800/30 rounded-2xl p-8 shadow-xl dark:shadow-gray-800/50 border border-gray-100 dark:border-gray-700">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 {formFields.map((field, index) => (
