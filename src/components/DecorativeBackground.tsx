@@ -18,12 +18,18 @@ export default function DecorativeBackground() {
       Array.from({ length: 5 }).map(() => ({
         top: Math.random() * 90,
         left: Math.random() * 90,
-        size: Math.random() * 150 + 100, 
-        color: colors[Math.floor(Math.random() * colors.length)], 
+        size: Math.random() * 150 + 100,
+        color: colors[Math.floor(Math.random() * colors.length)],
       }));
 
     setDecorations(generateDecorations());
-  }, []); 
+    
+    const interval = setInterval(() => {
+      setDecorations(generateDecorations());
+    }, 8000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="fixed w-full overflow-hidden h-full">
       {decorations.map((decor, index) => (
