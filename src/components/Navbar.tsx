@@ -3,7 +3,7 @@ import { Github, Linkedin, Menu, Moon, Sun, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Logo from "./Home/Logo";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 
 function Navbar() {
@@ -34,6 +34,7 @@ function Navbar() {
     localStorage.setItem("theme", newTheme);
   };
   const pathName = usePathname();
+  const router = useRouter()
   return (
     <>
       {/* Navbar */}
@@ -64,6 +65,7 @@ function Navbar() {
         >
           {Bars.map((bar, index) => (
             <motion.div
+              onClick={()=> router.push(bar.navigateLink)}
               key={index}
               variants={{
                 hidden: { y: -30, opacity: 0 },
@@ -74,7 +76,7 @@ function Navbar() {
                 bar?.navigateLink==pathName ? "underline" : ""
               }`}
             >
-              <Link href={bar.navigateLink}>{bar.name}</Link>
+              <div >{bar.name}</div>
             </motion.div>
           ))}
         </motion.div>

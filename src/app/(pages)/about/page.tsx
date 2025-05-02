@@ -52,7 +52,7 @@ function Page() {
           <div className="md:col-span-1">
             <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
               <Image
-                src="/path/to/your-profile-image.jpg"
+                src="/IMG-20250224-WA0087.jpg"
                 alt="Profile Picture"
                 fill
                 sizes="(max-width: 768px) 100vw, 192px"

@@ -2,8 +2,10 @@
 import { FileUser, SmartphoneNfc } from "lucide-react";
 import React from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 function HeroSection() {
+  const router = useRouter();
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -55,6 +57,7 @@ function HeroSection() {
         <motion.div className="flex gap-8 justify-center mt-8 w-full">
           {/* Resume Button */}
           <motion.div
+            onClick={() => router.push("/CV/cv_subhendu.pdf")}
             initial={{ x: -100 }}
             animate={{ x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -72,22 +75,24 @@ function HeroSection() {
           </motion.div>
 
           {/* Contact Button */}
-          <motion.div
-            initial={{ x: 100 }}
-            animate={{ x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-            whileTap={{ scale: 0.9 }}
-            className="cursor-pointer flex gap-2 border dark:border-white border-black items-center group rounded-xl px-4 py-2"
-          >
-            Contact
+          <a href="tel:+91 7991066182">
             <motion.div
-              animate={{ y: [0, -5, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
+              initial={{ x: 100 }}
+              animate={{ x: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              whileTap={{ scale: 0.9 }}
+              className="cursor-pointer flex gap-2 border dark:border-white border-black items-center group rounded-xl px-4 py-2"
             >
-              <SmartphoneNfc size={20} />
+              Contact
+              <motion.div
+                animate={{ y: [0, -5, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5 }}
+              >
+                <SmartphoneNfc size={20} />
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </a>
         </motion.div>
       </div>
     </motion.div>

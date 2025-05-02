@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 function ExperienceSection() {
@@ -53,26 +53,26 @@ function ExperienceSection() {
   ];
 
   // State to track which experience's projects are visible
-  const [visibleProjects, setVisibleProjects] = useState<Record<number, boolean>>({});
+  // const [visibleProjects, setVisibleProjects] = useState<Record<number, boolean>>({});
 
   // Toggle project visibility for a specific experience
-  const toggleProjects = (id: number) => {
-    setVisibleProjects((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  };
+  // const toggleProjects = (id: number) => {
+  //   setVisibleProjects((prev) => ({
+  //     ...prev,
+  //     [id]: !prev[id],
+  //   }));
+  // };
   
 
   return (
     <section id="experience" className=" max-w-4xl mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold mb-8 border-b pb-2 dark:text-white dark:border-gray-700">
+      <h2 className="text-3xl font-bold mb-8 border-b-2 pb-2 dark:text-white dark:border-gray-600">
         Professional Experience
       </h2>
 
       <div className="space-y-12">
         {experiences.map((exp) => (
-          <div key={exp.id} className="group">
+          <div key={exp.id} className="group border-b-[1px] dark:border-gray-700">
             {/* Company header */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
               <div className="flex items-center mb-4 md:mb-0">
@@ -98,14 +98,13 @@ function ExperienceSection() {
 
             {/* Company description */}
             <p className="text-gray-700 dark:text-gray-300 mb-6">{exp.description}</p>
-
             {/* Toggle Button */}
-            <button
+            {/* <button
               onClick={() => toggleProjects(exp.id)}
               className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition"
             >
               {visibleProjects[exp.id] ? "Hide Projects" : "View Projects"}
-            </button>
+            </button> */}
 
             {/* Projects (only shown if visibleProjects[exp.id] is true) */}
             {/* {visibleProjects[exp.id] && (
