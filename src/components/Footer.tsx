@@ -55,7 +55,7 @@ const letsConnect = [
 ];
 const Footer = () => {
   return (
-    <footer className="relative dark:bg-gray-900 bg-gray-300/50 h-auto text-black dark:text-white py-8">
+    <footer className="relative dark:bg-gray-900 bg-gray-50/90 h-auto text-black dark:text-white py-8">
       <div className=" flex justify-between flex-col md:flex-row items-center">
         <div className=" pb-6 md:p-2 text-2xl text-center min-w-[200px] underline md:no-underline md:w-1/3 transition duration-500 hover:scale-110">
           Subhendu Jena
