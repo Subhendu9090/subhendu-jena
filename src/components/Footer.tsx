@@ -15,10 +15,6 @@ const links = [
     icon: "/about",
   },
   {
-    name: "Works",
-    icon: "/works",
-  },
-  {
     name: "Contact",
     icon: "/contact",
   },
