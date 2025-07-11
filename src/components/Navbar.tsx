@@ -42,7 +42,7 @@ function Navbar() {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="w-full flex justify-between items-center p-4 fixed top-0 text-gray-900 bg-gray-50/90 dark:text-white backdrop-blur-sm dark:bg-gray-900/80 h-16"
+        className="w-full flex justify-between items-center px-20 py-4 fixed top-0 text-gray-900 bg-gray-50/90 dark:text-white backdrop-blur-sm dark:bg-gray-900/80 h-16"
       >
         {/* Logo Animation */}
         <motion.div
