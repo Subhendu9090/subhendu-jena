@@ -53,11 +53,11 @@ const Footer = () => {
   return (
     <footer className="relative dark:bg-gray-900/50 bg-gray-50/90 h-auto text-black dark:text-white py-8 ">
       <div className=" flex justify-between flex-col md:flex-row items-center max-w-7xl">
-        <div className="pb-6 md:p-2 text-2xl text-center min-w-[200px] underline md:no-underline md:w-1/3 transition duration-500 hover:scale-110">
+        <div className=" md:p-2 text-2xl text-center min-w-[200px] underline md:no-underline md:w-1/3 transition duration-500 hover:scale-110">
           Subhendu Jena
         </div>
-        <div className=" md:w-2/3 flex-col sm:flex-row flex justify-between p-4 gap-2 w-full ">
-          <div className=" flex flex-col justify-center items-center">
+        <div className=" md:w-2/3 flex-row flex justify-between p-4 gap-2 w-full ">
+          <div className="hidden sm:flex flex-col justify-center items-center">
             <div className=" mb-3 text-md underline sm:no-underline ">LINKS</div>
             <div className=" flex flex-col justify-center items-center gap-2 opacity-80 text-sm">
               {links.map((data, i) => (
@@ -70,23 +70,23 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          <div className=" flex flex-col  items-center">
-            <div className=" underline sm:no-underline text-center mb-3 text-md ">
+          <div className=" flex flex-col  items-center ">
+            <div className=" underline sm:no-underline sm:text-center text-start mb-3 text-sm sm:text-md ">
               CERTIFICATES & ACHIEVEMENTS
             </div>
-            <div className=" flex flex-col justify-center items-center gap-2 opacity-80 text-sm">
+            <div className=" flex flex-col justify-center items-start sm:items-center gap-2 opacity-80 text-sm">
               {certificateAndAchievements.map((data, i) => (
                 <Link key={i} href={data.link} target="_blank" rel="noopener noreferrer">
-                <div className="hover:underline transition duration-300 hover:scale-105 cursor-pointer">
+                <div className="hover:underline transition duration-300 hover:scale-105 cursor-pointer text-[12px]">
                   {data.name}
                 </div>
               </Link>
               ))}
             </div>
           </div>
-          <div className=" flex flex-col  items-center">
-            <div className=" underline sm:no-underline mb-3 text-md ">LET&apos;S CONNECT</div>
-            <div className=" flex flex-col justify-center items-center gap-2 opacity-80 text-sm">
+          <div className=" flex flex-col  items-center ">
+            <div className=" underline sm:no-underline text-right mb-3 text-md ">LET&apos;S CONNECT</div>
+            <div className=" flex flex-col gap-2 opacity-80 text-sm">
               {letsConnect.map((data, i) => {
                 const Icon = data.icon;
                 return (
