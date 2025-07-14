@@ -71,7 +71,7 @@ const Footer = () => {
             </div>
           </div>
           <div className=" flex flex-col  items-center ">
-            <div className=" underline sm:no-underline sm:text-center text-start mb-3 text-sm sm:text-md ">
+            <div className=" underline sm:no-underline text-center mb-3 text-sm sm:text-md ">
               CERTIFICATES & ACHIEVEMENTS
             </div>
             <div className=" flex flex-col justify-center items-start sm:items-center gap-2 opacity-80 text-sm">
@@ -85,7 +85,7 @@ const Footer = () => {
             </div>
           </div>
           <div className=" flex flex-col  items-center ">
-            <div className=" underline sm:no-underline text-right mb-3 text-md ">LET&apos;S CONNECT</div>
+            <div className=" underline sm:no-underline text-center mb-3 sm:text-md text-sm ">LET&apos;S CONNECT</div>
             <div className=" flex flex-col gap-2 opacity-80 text-sm">
               {letsConnect.map((data, i) => {
                 const Icon = data.icon;
