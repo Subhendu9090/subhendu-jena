@@ -11,7 +11,7 @@ function Page() {
     education: {
       degree: "Master of Computer Application (MCA)",
       college: "INDIRA GANDHI INSTITUTE OF TECHNOLOGY, sarang",
-      cgpa: "8.5",
+      cgpa: "8.7",
     },
   };
 
@@ -20,21 +20,21 @@ function Page() {
       id: 1,
       title: "MERN Stack Development Certificate",
       issuer: "CodeKart",
-      date: "June 2023",
+      date: "",
       image: "/certificate/CodeKart.png",
     },
     {
       id: 2,
       title: "Full-Stack Development Certificate",
       issuer: "IBM",
-      date: "January 2022",
+      date: "",
       image: "/certificate/IbmCert.png",
     },
     {
       id: 3,
       title: "Full-Stack Development Certificate",
       issuer: "Udemy",
-      date: "January 2022",
+      date: "",
       image: "/certificate/UdemyCert.png",
     },
   ];
