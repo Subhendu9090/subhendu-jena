@@ -26,7 +26,7 @@ function HeroSection() {
         </motion.h1>
 
         {/* Title Animation */}
-        <motion.p
+        {/* <motion.p
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -35,6 +35,16 @@ function HeroSection() {
             backgroundImage:
               "url('https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=')",
           }}
+        >
+          Full Stack Software Developer
+        </motion.p> */}
+        
+        <motion.p
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-center text-4xl sm:text-6xl mb-4 font-extrabold hover:scale-110 transition duration-700
+           text-slate-800 dark:text-gray-100"
         >
           Full Stack Software Developer
         </motion.p>
