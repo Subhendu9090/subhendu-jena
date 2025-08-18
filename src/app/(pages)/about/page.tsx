@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import DecorativeBackground from "@/components/DecorativeBackground";
+import profilePic from "../../../../public/IMG-20250224-WA0087.jpg";
 
 function Page() {
   const aboutData = {
@@ -52,12 +53,13 @@ function Page() {
           <div className="md:col-span-1">
             <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
               <Image
-                src="/IMG-20250224-WA0087.jpg"
+                src={profilePic}
                 alt="Profile Picture"
                 fill
                 sizes="(max-width: 768px) 100vw, 192px"
                 className="object-cover"
                 priority
+                placeholder="blur"
               />
             </div>
             <h3 className="text-xl font-semibold text-center dark:text-white">
@@ -85,8 +87,8 @@ function Page() {
                 Institution:{" "}
                 <Link
                   href={"https://igitsarang.ac.in/"}
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className=" hover:text-blue-700 hover:underline cursor-pointer"
                 >
                   {aboutData.education.college}
