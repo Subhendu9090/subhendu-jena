@@ -21,8 +21,8 @@ const Skills = () => {
 
   const SkillCard = ({ name, icon }:{name:string,icon:string}) => (
     <div className="group hover:rotate-6 relative overflow-hidden rounded-lg bg-white dark:bg-gray-700 p-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-      <div className="flex items-center space-x-3">
-        <span className="text-2xl">{icon}</span>
+      <div className="flex items-center space-x-1 md:space-x-3">
+        <span className=" text-xl md:text-2xl">{icon}</span>
         <span className="font-medium text-gray-800 dark:text-white">{name}</span>
       </div>
       <div className="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
@@ -48,7 +48,7 @@ const Skills = () => {
             Experience In
           </h3>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 xl:grid-cols-4 xxl:grid-cols-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-8 xl:grid-cols-5 xxl:grid-cols-7">
           {knownLanguages.map((lang) => (
             <SkillCard key={lang.name} {...lang} />
           ))}
@@ -63,7 +63,7 @@ const Skills = () => {
             Currently Exploring
           </h3>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
           {learningTech.map((tech) => (
             <SkillCard key={tech.name} {...tech} />
           ))}
