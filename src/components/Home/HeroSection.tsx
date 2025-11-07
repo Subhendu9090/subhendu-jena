@@ -67,7 +67,7 @@ function HeroSection() {
         <motion.div className="flex gap-8 justify-center mt-8 w-full">
           {/* Resume Button */}
           <motion.div
-            onClick={() => router.push("/CV/cv_subhendu.pdf")}
+            onClick={() => router.push("/CV/Subhendu-Jena.pdf")}
             initial={{ x: -100 }}
             animate={{ x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
