@@ -5,7 +5,6 @@ import {
   User,
   MessageSquare,
   Pencil,
-  Phone,
   MapPin,
   Github,
   Linkedin,

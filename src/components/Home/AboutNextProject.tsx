@@ -1,5 +1,5 @@
 "use client"
-import { Handshake, Mail, MessageCircle } from "lucide-react";
+import { Handshake, Mail } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 function AboutNextProject() {
