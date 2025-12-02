@@ -29,20 +29,6 @@ function AboutNextProject() {
             <Mail className=" group-hover:animate-bounce" />
             Email Me
           </button>
-          <button 
-  className="flex justify-center items-center px-4 gap-2 py-2 rounded-full group transition duration-300 border-2 cursor-pointer bg-transparent"
-  onClick={() => {
-    if (typeof window !== "undefined") {
-      window.open(
-        "https://wa.me/9090003689",
-        "_blank"
-      );
-    }
-  }}
->
-  <MessageCircle className="group-hover:animate-bounce" />
-  WhatsApp
-</button>
         </div>
       </div>
     </div>

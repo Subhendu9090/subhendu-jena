@@ -41,10 +41,10 @@ function Navbar() {
 
   useGSAP(() => {
     gsap.from(".nav-element", {
-      yPercent: -50,
-      duration: 1,
-      stagger: 0.02,
-      yoyo:true,
+      y: -150,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
     });
 
     gsap.from(".icon", {
@@ -52,6 +52,7 @@ function Navbar() {
       opacity: 0,
       duration: 1.2,
       ease: "power3.out",
+      delay:1
     });
   }, []);
 

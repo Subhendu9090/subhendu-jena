@@ -85,7 +85,7 @@ function HeroSection() {
           </motion.div>
 
           {/* Contact Button */}
-          <a href="tel:+91 7991066182">
+          <a href="mailto:subhendujena38@gmail.com">
             <motion.div
               initial={{ x: 100 }}
               animate={{ x: 0 }}

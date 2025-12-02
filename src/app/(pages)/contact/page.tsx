@@ -124,7 +124,7 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4">
+                {/* <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center">
                     <Phone className="w-6 h-6 text-purple-600 dark:text-purple-400" />
                   </div>
@@ -136,7 +136,7 @@ const ContactSection = () => {
                       +91 7991066182
                     </p>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 rounded-full bg-pink-100 dark:bg-pink-900/50 flex items-center justify-center">
