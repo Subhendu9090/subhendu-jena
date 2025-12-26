@@ -20,7 +20,7 @@ const links = [
   },
   {
     name: "Resume",
-    icon: "",
+    icon: "/CV/Subhendu_Jena.pdf",
   },
 ];
 const certificateAndAchievements = [

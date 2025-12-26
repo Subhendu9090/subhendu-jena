@@ -38,7 +38,7 @@ function HeroSection() {
         >
           Full Stack Software Developer
         </motion.p> */}
-        
+
         <motion.p
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -66,8 +66,10 @@ function HeroSection() {
         {/* Buttons Animation */}
         <motion.div className="flex gap-8 justify-center mt-8 w-full">
           {/* Resume Button */}
-          <motion.div
-            onClick={() => router.push("/CV/Subhendu-Jena.pdf")}
+          <motion.a
+            href="/CV/Subhendu_Jena.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ x: -100 }}
             animate={{ x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -82,7 +84,7 @@ function HeroSection() {
             >
               <FileUser size={20} />
             </motion.div>
-          </motion.div>
+          </motion.a>
 
           {/* Contact Button */}
           <a href="mailto:subhendujena38@gmail.com">
