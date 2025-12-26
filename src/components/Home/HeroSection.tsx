@@ -2,10 +2,8 @@
 import { FileUser, SmartphoneNfc } from "lucide-react";
 import React from "react";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
 
 function HeroSection() {
-  const router = useRouter();
   return (
     <motion.div
       initial={{ opacity: 0 }}
