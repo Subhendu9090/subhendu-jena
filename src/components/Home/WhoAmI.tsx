@@ -51,7 +51,7 @@ const WhoAmI: React.FC = () => {
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 dark:border-blue-400">
                 <Image
-                  src="/IMG-20250224-WA0087.jpg"
+                  src="/subhendu.jpeg"
                   alt="Subhendu Jena"
                   className="w-full h-full object-cover object-center"
                   width={250}

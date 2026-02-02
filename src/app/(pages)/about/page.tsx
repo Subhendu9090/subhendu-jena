@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import DecorativeBackground from "@/components/DecorativeBackground";
-import profilePic from "../../../../public/IMG-20250224-WA0087.jpg";
+import profilePic from "../../../../public/subhendu.jpeg";
 
 function Page() {
   const aboutData = {
