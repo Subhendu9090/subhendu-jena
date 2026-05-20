@@ -70,7 +70,7 @@ function Navbar() {
             <div
               onClick={() => router.push(bar.navigateLink)}
               key={index}
-              className={`hover:scale-105 nav-element cursor-pointer hover:border-2 px-2 rounded-full duration-300 py-1 border-gray-900 border-black dark:border-white ${
+              className={`hover:scale-105 nav-element cursor-pointer hover:border-2 px-2 rounded-full duration-300 py-1 border-gray-900  dark:border-white ${
                 bar.navigateLink === pathName ? "underline" : ""
               }`}
             >
