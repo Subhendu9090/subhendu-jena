@@ -31,7 +31,7 @@ export default function DecorativeBackground() {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="fixed w-full overflow-hidden h-full">
+    <div className="fixed  inset-0 w-full pointer-events-none overflow-hidden h-full">
       {decorations.map((decor, index) => (
         <div
           key={index}

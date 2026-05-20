@@ -30,23 +30,22 @@ const AboutNextProject = dynamic(
   {
     ssr: false,
     loading: () => <SkeletonSection />,
-  }
+  },
 );
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-white dark:bg-black">
+    <div className="relative min-h-screen bg-transparent">
       {/* Background Decorations */}
       <DecorativeBackground />
 
-      {/* Eager-loaded */}
-      <HeroSection />
-      <WhoAmI />
-
-      {/* Lazy-loaded with skeleton fallback */}
-      <Skills />
-      <Projects />
-      <AboutNextProject />
+      <div className="relative z-10">
+        <HeroSection />
+        <WhoAmI />
+        <Skills />
+        <Projects />
+        <AboutNextProject />
+      </div>
     </div>
   );
 }

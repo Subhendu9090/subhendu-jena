@@ -18,7 +18,7 @@ function Logo() {
   return (
     <div
       id="logo"
-      className="text-4xl text-white font-bold text-transparent bg-clip-text"
+      className="text-4xl text-gray-900 dark:text-white font-bold  bg-clip-text"
       // style={{
       //   backgroundImage:
       //     "url('https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=')",
