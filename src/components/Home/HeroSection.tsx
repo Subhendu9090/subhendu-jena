@@ -65,7 +65,7 @@ function HeroSection() {
         <motion.div className="flex gap-8 justify-center mt-8 w-full">
           {/* Resume Button */}
           <motion.a
-            href="/CV/Subhendu_Jena.pdf"
+            href="/CV/cv_subhendu.pdf"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ x: -100 }}
