@@ -4,6 +4,7 @@ import { Mail, MapPin, Clock, Github, Linkedin, Send, ArrowUpRight, AlertCircle,
 import Link from "next/link";
 
 const ContactSection = () => {
+  
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "ok" | "err">("idle");
