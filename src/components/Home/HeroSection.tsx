@@ -60,7 +60,7 @@ function HeroSection() {
 
           {/* Resume — FIXED: unified to Subhendu_Jena.pdf */}
           <motion.a
-            href="/CV/Subhendu_Jena.pdf"
+            href="/CV/cv_subhendu.pdf"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ x: -100 }}
