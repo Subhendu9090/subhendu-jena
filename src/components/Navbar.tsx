@@ -10,6 +10,7 @@ import gsap from "gsap";
 function Navbar() {
   const Bars = [
     { name: "Home", navigateLink: "/" },
+    { name: "Projects", navigateLink: "/#projects" },
     { name: "Contact", navigateLink: "/contact" },
     { name: "About", navigateLink: "/about" },
     { name: "Experience", navigateLink: "/experience" },

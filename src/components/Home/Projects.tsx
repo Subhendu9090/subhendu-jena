@@ -128,7 +128,7 @@ const LiveCard = ({ project }: { project: Project }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden flex flex-col hover:border-blue-300 dark:hover:border-blue-700 hover:-translate-y-0.5 transition-all duration-200">
+    <div id="projects" className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden flex flex-col hover:border-blue-300 dark:hover:border-blue-700 hover:-translate-y-0.5 transition-all duration-200">
       {/* Accent bar */}
       <div
         className="h-0.5 w-full"
